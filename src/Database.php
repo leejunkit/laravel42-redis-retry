@@ -1,6 +1,7 @@
 <?php namespace TwentyTwoMedia\Illuminate\Redis;
 
 use Illuminate\Redis\Database as IlluminateRedisDatabase;
+use Predis\Connection\ConnectionException;
 
 class Database extends IlluminateRedisDatabase {
 
@@ -21,7 +22,7 @@ class Database extends IlluminateRedisDatabase {
                 return call_user_func_array(array($this->clients['default'], $method), $parameters);
             }
 
-            catch (Predis\Connection\ConnectionException $e) {
+            catch (ConnectionException $e) {
                 if (++$count == $maxTries) {
                     throw $e;
                 }
