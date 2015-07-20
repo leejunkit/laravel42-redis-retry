@@ -22,14 +22,10 @@ class Database extends IlluminateRedisDatabase {
             }
 
             catch (Predis\Connection\ConnectionException $e) {
-                $trace = $e->getTrace();
-                Log::error('Redis connection exception: ', compact('trace', 'count', 'maxTries'));
-                
                 if (++$count == $maxTries) {
                     throw $e;
                 }
             }
         }
 	}
-
 }
