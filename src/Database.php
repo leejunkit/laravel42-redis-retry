@@ -19,7 +19,7 @@ class Database extends IlluminateRedisDatabase {
 
         while (true) {
             try {
-                return call_user_func_array(array($this->clients['default'], $method), $parameters);
+                return parent::command($method, $parameters);
             }
 
             catch (ConnectionException $e) {
