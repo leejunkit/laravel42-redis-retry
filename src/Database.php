@@ -1,8 +1,8 @@
 <?php namespace TwentyTwoMedia\Illuminate\Redis;
 
-//use Illuminate\Redis\Database as IlluminateRedisDatabase;
+use Illuminate\Redis\Database as IlluminateRedisDatabase;
 
-class Database extends Illuminate\Redis\Database {
+class Database extends IlluminateRedisDatabase {
 
 	/**
 	 * Run a command against the Redis database.
