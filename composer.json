@@ -1,0 +1,22 @@
+{
+    "name": "leejunkit/laravel42-redis-retry",
+    "description": "Laravel 4 Redis retry on connection exceptions",
+    "keywords": ["laravel", "redis", "retry"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Lee Jun Kit",
+            "email": "junkit@22media.co"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "~4.2",
+        "illuminate/redis": "~4.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "TwentyTwoMedia\\Illuminate\\Redis\\": "src/"
+        }
+    }
+}
